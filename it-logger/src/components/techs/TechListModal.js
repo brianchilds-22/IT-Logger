@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TechItem from "./TechItem";
-import Preloader from "../layout/Preloader"
+
 
 const TechListModal = () => {
     const [techs, setTechs] = useState([]);
@@ -19,16 +19,14 @@ const TechListModal = () => {
         setTechs(data);
         setLoading(false);
     }
-    if(loading) {
-        return <Preloader />;
-    }
+  
     return (
         <div id="tech-list-modal" className="modal">
             <div className="modal-content">
                 <h4>Technician List</h4>
                 <ul className="collection">
-                    {!loading && techs.map(tech => 
-                        <TechItem tech={tech} key={tech.id} />)}
+                    {!loading && 
+                    techs.map(tech => <TechItem tech={tech} key={tech.id} />)}
                 </ul>
             </div>
         </div>

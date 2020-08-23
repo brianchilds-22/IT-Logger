@@ -18,7 +18,7 @@ const EditLogModal = () => {
             setAttention(false);
         }
         
-    }
+    };
 
 
     return (
